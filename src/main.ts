@@ -1093,31 +1093,29 @@ window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") saveGeneration++;
 });
 window.addEventListener("focus", () => void refreshManageState());
-MarkEdit.onAppReady(() => {
-  MarkEdit.addMainMenuItem({
-    title: "Pika",
-    children: [
-      {
-        ...command("Sync to Pika…", async () => {
-          clearManagementApproval();
-          await syncToPika();
-        }),
-        key: "b",
-        modifiers: ["Control", "Option", "Command"],
-      },
-      { separator: true },
-      {
-        ...command("Manage Post…", manageMenu),
-        state: () => {
-          void refreshManageState();
-          return { isEnabled: canManagePost };
-        },
-      },
-      { separator: true },
-      command("Account…", async () => {
+MarkEdit.addMainMenuItem({
+  title: "Pika",
+  children: [
+    {
+      ...command("Sync to Pika…", async () => {
         clearManagementApproval();
-        await account();
+        await syncToPika();
       }),
-    ],
-  });
+      key: "b",
+      modifiers: ["Control", "Option", "Command"],
+    },
+    { separator: true },
+    {
+      ...command("Manage Post…", manageMenu),
+      state: () => {
+        void refreshManageState();
+        return { isEnabled: canManagePost };
+      },
+    },
+    { separator: true },
+    command("Account…", async () => {
+      clearManagementApproval();
+      await account();
+    }),
+  ],
 });

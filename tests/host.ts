@@ -65,7 +65,8 @@ const saveLocal = () => {
 let documentPath: string | undefined = "/test/garden.md";
 const host = {
   editorView: { state: { doc: { toString: () => documentText } } },
-  onAppReady: (action: () => void) => action(),
+  // Later editor windows never receive the app-wide startup event.
+  onAppReady: (_action: () => void) => {},
   onEditorReady: (action: () => void) => action(),
   addMainMenuItem: (menu: MenuItem) => menus.push(menu),
   showContextMenu: (items: MenuItem[]) => {
@@ -237,6 +238,8 @@ window.fetch = (async (resource: string | URL | Request, options?: RequestInit) 
 }) as typeof fetch;
 
 global.runSmoke = async () => {
+  if (menus.length !== 1 || menus[0].title !== "Pika")
+    throw new Error("Pika menu was not registered without an app-ready event");
   const assert = (condition: unknown, message: string) => {
     if (!condition) throw new Error(message);
   };

@@ -11,7 +11,7 @@ const result = await build({
   external: ["markedit-api"],
   legalComments: "linked",
   metafile: true,
-  banner: { js: "/*! MarkEdit Pika 0.1.0 — MIT. See THIRD_PARTY_NOTICES.txt. */" },
+  banner: { js: "/*! MarkEdit Pika 0.1.1 — MIT. See THIRD_PARTY_NOTICES.txt. */" },
 });
 const packages = new Set<string>();
 for (const file of Object.keys(result.metafile.inputs)) {
