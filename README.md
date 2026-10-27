@@ -1,12 +1,8 @@
 # MarkEdit-pika
 
-Draft syncing and publishing to [Pika](https://pika.page/) for [MarkEdit](https://github.com/MarkEdit-app/MarkEdit), built with [markedit-api](https://github.com/MarkEdit-app/MarkEdit-api) and Pika’s [Micropub API](https://pika.page/manual/micropub). Local images upload automatically; your Markdown content and image references are unchanged.
+Draft syncing and publishing to [Pika](https://pika.page/) for [MarkEdit](https://github.com/MarkEdit-app/MarkEdit), built with [markedit-api](https://github.com/MarkEdit-app/MarkEdit-api) and Pika’s [Micropub API](https://pika.page/manual/micropub).
 
-## Installation
-
-Copy [markedit-pika.js](https://github.com/alexsereno/markedit-pika/releases/latest/download/markedit-pika.js) to `~/Library/Containers/app.cyan.markedit/Data/Documents/scripts/`, then restart MarkEdit.
-
-Requires MarkEdit 1.37.0 or later and a Pika account. Create an app token using [Pika’s setup instructions](https://pika.page/manual/micropub#setup), then connect when prompted. No blog URL is needed.
+Requires MarkEdit 1.37.0 or later and a Pika account. Create an app token using [Pika’s setup instructions](https://pika.page/manual/micropub#setup), then connect when prompted.
 
 ## Configuration
 
